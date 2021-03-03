@@ -10,7 +10,7 @@ namespace CranleighCovidTestingCalendar;
  */
 class SanitizeYearGroup
 {
-    public const FORMFORM = "Fouth Form";
+    public const FOUTH_FORM = "Fouth Form";
     public const LOWERFIFTH = "Lower Fifth";
     public const UPPERFIFTH = "Upper Fifth";
     public const LOWERSIXTH = "Lower Sixth";
@@ -49,7 +49,7 @@ class SanitizeYearGroup
             $int = (int) $str;
             switch ($int) {
                 case 9:
-                    return self::FORMFORM;
+                    return self::FOUTH_FORM;
                     break;
                 case 10:
                     return self::LOWERFIFTH;
@@ -66,8 +66,11 @@ class SanitizeYearGroup
             }
         } else {
             switch (strtoupper($str)) {
+                case "9 (FOURTH FORM)":
+                    return self::FOUTH_FORM;
                 case "L5":
                 case "LVTH":
+                case "LV":
                     return self::LOWERFIFTH;
                     break;
                 case "UV":
