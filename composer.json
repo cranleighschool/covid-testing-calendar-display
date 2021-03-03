@@ -1,0 +1,19 @@
+{
+    "name": "cranleighschool/covidtestingcalendar",
+    "type": "project",
+    "description": "Covid Testing",
+    "keywords": [
+        "cranleigh"
+    ],
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "CranleighCovidTestingCalendar\\": "src/"
+        }
+    },
+    "require": {
+        "vlucas/phpdotenv": "^5.3",
+        "johngrogg/ics-parser": "^2.2",
+        "illuminate/support": "^8.30"
+    }
+}
