@@ -17,6 +17,9 @@ class BayCalendar
      * @var array
      */
     public $events;
+    /**
+     * @var string[]
+     */
     private $keysToKeep = ['pupilName', 'pupilHouse', 'pupilYearGroup', 'eventStartTime', 'eventEndTime'];
 
     /**
@@ -40,7 +43,7 @@ class BayCalendar
     public function mapper($item)
     {
         $item->bay = $this->bay;
-        $item->pupilName = $this->getPupilName($item->summary);
+        $item->pupilName = $this->getPupilName($item->description);
         $item->pupilHouse = $this->getHouse($item->description);
         $item->pupilYearGroup = $this->getYearGroup($item->description);
         $item->eventStartTime = $this->getStartTime($item->dtstart);
@@ -80,7 +83,7 @@ class BayCalendar
      *
      * @return string
      */
-    private function getPupilName(string $summary)
+    private function getBookerName(string $summary)
     {
         return trim(str_replace("For Book your Covid Test", "", $summary));
     }
@@ -99,6 +102,21 @@ class BayCalendar
         return new SanitizeYearGroup($str);
     }
 
+    /**
+     * @param  string  $description
+     *
+     * @return string
+     */
+    private function getPupilName(string $description): string
+    {
+        preg_match('/Pupil Name: [a-zA-Z0-9].*/', $description, $matches);
+
+        if (!empty($matches)) {
+            $str = $matches[ 0 ];
+            return trim(str_replace('Pupil Name: ', '', $str));
+        }
+        return 'Unknown';
+    }
 
 
     /**
