@@ -76,6 +76,9 @@ class SanitizeYearGroup
                 case "UV":
                     return self::UPPERFIFTH;
                     break;
+                case "L6TH":
+                    return self::LOWERSIXTH;
+                    break;
             }
         }
 
