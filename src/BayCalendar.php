@@ -95,9 +95,10 @@ class BayCalendar
      */
     private function getYearGroup(string $description): string
     {
-        preg_match('/(Year Group|Yeargroup): [a-zA-Z0-9]*/', $description, $matches);
+        preg_match('/(Year Group|Yeargroup): [a-zA-Z0-9].*/', $description, $matches);
 
         $str = $matches[ 0 ];
+        $str = str_replace("Yeargroup: ", "", $str);
         $str = trim(str_replace('Year Group: ', '', $str));
         return new SanitizeYearGroup($str);
     }
