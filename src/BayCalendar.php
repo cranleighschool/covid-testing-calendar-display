@@ -114,7 +114,8 @@ class BayCalendar
 
         if (!empty($matches)) {
             $str = $matches[ 0 ];
-            return trim(str_replace('Pupil Name: ', '', $str));
+            $str = trim(str_replace('Pupil Name: ', '', $str));
+            return ucwords(strtolower($str));
         }
         return 'Unknown';
     }

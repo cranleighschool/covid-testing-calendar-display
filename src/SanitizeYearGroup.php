@@ -61,7 +61,7 @@ class SanitizeYearGroup
             }
         }
 
-        return $str;
+        return trim(ucwords(strtolower($str)));
 
     }
 }
