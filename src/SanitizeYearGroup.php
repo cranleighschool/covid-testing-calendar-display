@@ -10,6 +10,11 @@ namespace CranleighCovidTestingCalendar;
  */
 class SanitizeYearGroup
 {
+    public const FORMFORM = "Fouth Form";
+    public const LOWERFIFTH = "Lower Fifth";
+    public const UPPERFIFTH = "Upper Fifth";
+    public const LOWERSIXTH = "Lower Sixth";
+    public const UPPERSIXTH = "Upper Sixth";
     /**
      * @var string
      */
@@ -43,41 +48,34 @@ class SanitizeYearGroup
         if (preg_match('/^\A(9|10|11|12|13)\z$/', $str)) {
             $int = (int) $str;
             switch ($int) {
-                case 3:
-                    return "Form 1";
-                    break;
-                case 4:
-                    return "Form 2";
-                    break;
-                case 5:
-                    return "Form 3";
-                    break;
-                case 6:
-                    return "Form 4";
-                    break;
-                case 7:
-                    return "Form 5";
-                    break;
-                case 8:
-                    return "Form 6";
-                    break;
                 case 9:
-                    return "IV Form";
+                    return self::FORMFORM;
                     break;
                 case 10:
-                    return "LV Form";
+                    return self::LOWERFIFTH;
                     break;
                 case 11:
-                    return "UV Form";
+                    return self::UPPERFIFTH;
                     break;
                 case 12:
-                    return "LVI Form";
+                    return self::LOWERSIXTH;
                     break;
                 case 13:
-                    return "UVI Form";
+                    return self::UPPERSIXTH;
+                    break;
+            }
+        } else {
+            switch (strtoupper($str)) {
+                case "L5":
+                case "LVTH":
+                    return self::LOWERFIFTH;
+                    break;
+                case "UV":
+                    return self::UPPERFIFTH;
                     break;
             }
         }
+
 
         return trim(ucwords(strtolower($str)));
 
