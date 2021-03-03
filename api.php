@@ -5,7 +5,7 @@ use CranleighCovidTestingCalendar\Helper;
 
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
-if (isset($_GET['day'])) {
+if (isset($_GET['day']) && !empty($_GET['day'])) {
     $day = ucfirst(strtolower($_GET[ 'day' ]));
 } else {
     $day = 'Friday';
