@@ -97,13 +97,13 @@ class Helper
     public static function generateTimesForDay(string $day = null)
     {
         if ($day === 'Friday') {
-            return self::date_range(Carbon::parse("2021-03-05 12:55:00"), Carbon::parse("2021-03-05 15:05:00"));
+            return self::date_range(Carbon::parse("2021-03-05 13:00:00"), Carbon::parse("2021-03-05 15:00:00"));
         }
         if ($day === 'Saturday') {
-            return self::date_range(Carbon::parse("2021-03-06 8:30:00"), Carbon::parse("2021-03-06 17:30:00"));
+            return self::date_range(Carbon::parse("2021-03-06 8:30:00"), Carbon::parse("2021-03-06 17:00:00"));
         }
         if ($day === 'Sunday') {
-            return self::date_range(Carbon::parse("2021-03-07 9:00:00"), Carbon::parse("2021-03-07 20:00:00"));
+            return self::date_range(Carbon::parse("2021-03-07 9:00:00"), Carbon::parse("2021-03-07 19:30:00"));
         }
     }
 }
