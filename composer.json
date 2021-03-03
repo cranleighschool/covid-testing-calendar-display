@@ -3,7 +3,8 @@
     "type": "project",
     "description": "Covid Testing",
     "keywords": [
-        "cranleigh"
+        "cranleigh",
+        "covid"
     ],
     "license": "MIT",
     "autoload": {
