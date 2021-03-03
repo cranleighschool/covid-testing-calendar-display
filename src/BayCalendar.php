@@ -130,9 +130,15 @@ class BayCalendar
     {
         preg_match('/House: [a-zA-Z]*/', $description, $matches);
         $str = $matches[ 0 ];
-        return trim(str_replace("House: ", "", $str));
-        $house = explode("House: ", $description);
-        return $house[ 1 ];
+
+        $str = trim(str_replace("House: ", "", $str));
+        if (strtolower($str)==='martlett') {
+            return 'Martlet';
+        }
+        if (strtolower($str)==='cubit') {
+            return 'Cubitt';
+        }
+        return $str;
 
     }
 
