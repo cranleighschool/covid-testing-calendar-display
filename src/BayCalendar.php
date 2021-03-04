@@ -137,7 +137,7 @@ class BayCalendar
         if (strtolower($str)==='martlett') {
             return 'Martlet';
         }
-        if (strtolower($str)==='cubit') {
+        if (strtolower($str)==='cubit' || strtolower($str)==='cubbitt' || strtolower($str)==='cubbit') {
             return 'Cubitt';
         }
         return $str;
