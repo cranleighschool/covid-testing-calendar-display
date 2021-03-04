@@ -6,6 +6,7 @@ namespace CranleighCovidTestingCalendar;
 
 use Carbon\Carbon;
 use ICal\ICal;
+use Illuminate\Support\Str;
 
 /**
  * Class BayCalendar
@@ -115,8 +116,9 @@ class BayCalendar
         if (!empty($matches)) {
             $str = $matches[ 0 ];
             $str = trim(str_replace('Pupil Name: ', '', $str));
-            return ucwords(strtolower($str));
+            return Str::title(strtolower($str));
         }
+
         return 'Unknown';
     }
 

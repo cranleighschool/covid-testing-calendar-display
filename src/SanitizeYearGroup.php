@@ -67,18 +67,34 @@ class SanitizeYearGroup
         } else {
             switch (strtoupper($str)) {
                 case "9 (FOURTH FORM)":
+                case "Form IV":
+                case "4TH":
+                case "1V":
+                case "IV FORM":
                     return self::FOUTH_FORM;
+
                 case "L5":
+                case "LOWER 5TH":
                 case "LVTH":
                 case "LV":
+                case "L5TH":
                     return self::LOWERFIFTH;
-                    break;
+
+                case "YEAR 11":
                 case "UV":
                     return self::UPPERFIFTH;
-                    break;
+
                 case "L6TH":
+                case "LVI":
+                case "LOWER 6":
+                case "L6":
+                case "LOWER VI":
                     return self::LOWERSIXTH;
-                    break;
+
+                case "UPPER 6":
+                case "UVI":
+                    return self::UPPERSIXTH;
+
             }
         }
 
