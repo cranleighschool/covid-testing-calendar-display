@@ -67,6 +67,7 @@ class SanitizeYearGroup
         } else {
             switch (strtoupper($str)) {
                 case "9 (FOURTH FORM)":
+                case "FFORTH FORM":
                 case "Form IV":
                 case "4TH":
                 case "1V":
